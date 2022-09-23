@@ -239,11 +239,6 @@ def main():
     logger.info('**********************End evaluation %s/%s(%s)**********************' %
                 (cfg.EXP_GROUP_PATH, cfg.TAG, args.extra_tag))
 
-    # waymo evaluation tools have some bugs when train eval
-    if 'waymo' in cfg.DATA_CONFIG.DATASET.lower():
-        raise NotImplementedError
-    # return
-
 
 if __name__ == '__main__':
     main()
