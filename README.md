@@ -79,7 +79,7 @@ the model with you if it will use for any profit-oriented activities.
 ![latency](./docs/latency.png)
 
 
-Following results are measured in milliseconds.
+To facilitate further researches, we provide latency measured in milliseconds as follows:
 
 |      Model      | 1060 + Spconv2.x | 1080Ti + Spconv2.x | A100 + Spconv2.x | 
 |:---------------:|:----------------:|:------------------:|:----------------:|
