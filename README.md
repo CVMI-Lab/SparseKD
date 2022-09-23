@@ -120,7 +120,7 @@ If you find this project useful in your research, please consider cite:
 @inproceedings{yang2022towards,
     title={Towards Efficient 3D Object Detection with Knowledge Distillation},
     author={Yang, Jihan and Shi, Shaoshuai and Ding, Runyu and Wang, Zhe and Qi, Xiaojuan},
-    booktitle={Advances in neural information processing systems},
+    booktitle={Advances in Neural Information Processing Systems},
     year={2022}
 }
 ```
