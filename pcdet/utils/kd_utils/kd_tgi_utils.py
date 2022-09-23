@@ -299,7 +299,7 @@ def _remap_param_in_queue(param_queue, model_state, new_model_state, self_model_
 
 def _narrow_weight(k, curr_v, self_model_state, spconv_keys):
     # adapt spconv weights from version 1.x to version 2.x if you used weights from spconv 1.x
-    if k in spconv_keys and self_model_state[k].shape != curr_v.shape:
+    if k in spconv_keys and self_model_state[k].shape[0:2] != curr_v.shape[0:2]:
         # (k1, k2, k3, c_in, c_out) to (c_out, k1, k2, k3, c_in)
         curr_v = curr_v.permute(4, 0, 1, 2, 3)
 
