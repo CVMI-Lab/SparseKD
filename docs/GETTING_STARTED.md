@@ -9,15 +9,21 @@ prepare needed datasets.
 
 ## Training & Testing
 [//]: # ( TODO)
-### Step 1: Train a teacher model (CP-voxel as example)
+### Step 1: Train a teacher model (CP-Voxel as example)
 ```shell
-sh scripts/dist_train.sh ${NUM_GPUS} --cfg_file cfgs/waymo_models/
+sh scripts/dist_train.sh ${NUM_GPUS} --cfg_file cfgs/waymo_models/cp-voxel/cp-voxel.yaml
 ```
 
-### Step 2: Distillation
+### Step 2: Distillation (CP-Voxel-S as example)
+Modify following keys in the student distillation config
+```yaml
+# cfgs/waymo_models/cp-voxel/cp-voxel-s_sparsekd.yaml
+TEACHER_CKPT: ${PATH_TO_TEACHER_CKPT}
+PRETRAINED_MODEL: ${PATH_TO_TEACHER_CKPT}
+```
+Run the training config
 ```shell
-sh scripts/dist_train.sh ${NUM_GPUS} --cfg_file cfgs/waymo_models/ --teacher_ckpt ${TEACHER_CKPT} \
-    --pretrained_model ${TEACHER_CKPT}
+sh scripts/dist_train.sh ${NUM_GPUS} --cfg_file cfgs/waymo_models/cp-voxel-s_sparsekd.yaml 
 ```
 
 ## Calculate Efficiency Metrics
