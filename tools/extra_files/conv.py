@@ -239,7 +239,7 @@ class SparseConvolution(SparseModule):
                     input.features,
                     self.weight.view(self.in_channels, self.out_channels))
 
-            flops = input.features.shape[0] * input.features.shape[1] * features.shape[1] * features.shape[0]
+            flops = input.features.shape[0] * input.features.shape[1] * features.shape[1]
             if self.bias is not None:
                 features += self.bias
             out_tensor = out_tensor.replace_feature(features)
